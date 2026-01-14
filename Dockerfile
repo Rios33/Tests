@@ -39,4 +39,8 @@ RUN python -m playwright install chromium
 
 COPY . .
 
-CMD ["pytest", "-v", "--alluredir=allure-results"]
+# ДОБАВЬ ЭТУ СТРОЧКУ - ЭТО РЕШЕНИЕ ПРОБЛЕМЫ!
+ENV PYTHONPATH=/app
+
+# ИЗМЕНИ ЭТУ СТРОЧКУ:
+CMD ["python", "-m", "pytest", "-v", "--alluredir=allure-results"]
